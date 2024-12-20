@@ -1,11 +1,13 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
-	LOG_LEVEL: str
-	LOG_FORMAT: str
-	LOG_FILE: str
-	LOG_BACKUP_COUNT: int
-	LOG_WRITE_STATUS: bool
+	MONGO_CLIENT: str = None
+	MONGO_DB_NAME: str = None
+	LOG_LEVEL: str = None
+	LOG_FORMAT: str = None
+	LOG_FILE: str = None
+	LOG_BACKUP_COUNT: int = None
+	LOG_WRITE_STATUS: bool = None
 
 
 	model_config = SettingsConfigDict(env_file=".env")
