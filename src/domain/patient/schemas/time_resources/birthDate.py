@@ -8,8 +8,9 @@ from src.configs.logger_setup import logger
 
 class Date(BaseModel):
 	date: Optional[str] = Field(
-		None, description="The person's date of birth in the format 'YYYY', 'YYYY-MM' or 'YYYY-MM-DD'.")
-
+		None, description="The person's date of birth in the format 'YYYY', 'YYYY-MM' or 'YYYY-MM-DD'.",
+		examples=["2000-01-01", "2000-01", "2000"]
+	)
 
 	@model_validator(mode="before")
 	def validate_birth_date(cls, values):
